@@ -1,0 +1,678 @@
+﻿/*
+ *WEATHER 天气
+ */
+/*
+ *晴
+ */
+ .Sunny{
+ 	 animation : sunny 15s linear infinite;
+ 	 -webkit-animation:sunny 15s linear inifinte;
+   width : 1.2em;
+   height : 12em;
+   background : -webkit-linear-gradient(top,rgba(255,255,255,0)0%,rgba(255,255,255,0.8)50%,rgba(255,255,255,0)100%);
+   background : linear-gradient(top,rgba(255,255,255,0)0%,rgba(255,255,255,0.8)50%,rgba(255,255,255,0)100%);
+   position : absolute;
+   top : 0.5em;
+   left : 4.6em;
+ }
+ .Sunny:before{
+ 	 content : "";
+ 	 width : 1.2em;
+ 	 height : 12em;
+ 	 position:absolute;
+ 	 background : -webkit-linear-gradient(top,rgba(255,255,255,0)0%,rgba(255,255,255,0.8)50%,rgba(255,255,255,0)100%);
+   background : linear-gradient(top,rgba(255,255,255,0)0%,rgba(255,255,255,0.8)50%,rgba(255,255,255,0)100%);
+   -webkit-transform : rotate(90deg);
+   transform : rotate(90deg); 
+ 	}
+ .Sunny:after{
+ 		content : "";
+ 		width : 5em;
+ 		height : 5em;
+ 		border-radius : 50%;
+ 		background : #FFEE44;
+ 		position : absolute;
+ 		top : 3.5em;
+ 		left : -1.9em;
+ 		box-shadow : rgba(255,255,0,0.3) 0 0 0 1em;
+ 		}
+ /*sunny animation*/
+ @-webkit-keyframes sunny{
+ 	  0%{-webkit-transform:rotate(0);}
+ 	  100%{-webkit-transform:rotate(360deg);}
+ 	}
+ @keyframes sunny{
+ 	  0%{transform:rotate(0);}
+ 	  100%{transform:rotate(360deg);}
+ 	}
+/*
+ *多云
+ */
+ .Cloudy{
+ 	  -webkit-animation : cloudy 4s ease-in-out infinite;
+ 	  animation : cloudy 4s ease-in-out infinite;
+ 	  width : 4em;
+ 	  height : 4em;
+ 	  position : absolute;
+ 	  top:2em;
+ 	  left:2em;
+ 	  background : #FFF;
+ 	  border-radius : 50%;
+ 	  box-shadow :
+ 	    #FFF 2em   -0.8em 0  0.5em,
+ 	    #FFF 4em    0.2em 0 -0.3em,
+ 	    #FFF 2.5em  1em   0 -0.3em,
+ 	    #FFF 0em    1em   0 -0.3em,
+ 	    #FFF -2em   0.5em   0 -0.5em;
+ 	}
+ .Cloudy:after{
+ 	  -webkit-animation:cloudy-shadow 4s ease-in-out infinite;
+ 	  animation:cloudy-shadow 4s ease-in-out infinite;
+ 	  content:"";
+ 	  position : absolute;
+ 	  width : 7.5em;
+ 	  height : 1.5em;
+ 	  background : #000;
+ 	  top : 8em;
+ 	  left : -0.8em;
+ 	  opacity : 0.2;
+ 	  border-radius : 50%;
+ 	  -webkit-transform:scale(0.9);
+ 	  transform:scale(0.9);
+ 	}
+ 	
+ 	/*cloudy animation*/
+ @keyframes cloudy{
+ 	  50%{transform:translateY(1em);}
+ 	}
+ @-webkit-keyframes cloudy{
+ 	  50%{-webkit-transform:translateY(1em);}
+ 	}
+ 	
+ 	/*cloudy-shadow animation*/
+ @keyframes cloudy-shadow{
+ 	  50%{
+ 	  	  -webkit-transform:translateY(-1em) scale(0.5);
+ 	  	  opacity:0.5;
+ 	  	 }
+ 	}
+ @-webkit-keyframes cloudy-shadow{
+ 	  50%{
+ 	  	  -webkit-transform:translateY(-1em) scale(0.5);
+ 	  	  opacity:0.5;
+ 	  	 }
+ 	}
+ 	
+/*
+ *雨
+ */
+ .Rainy{
+ 	  -webkit-animation : rainy 2s ease-in-out infinite alternate;
+ 	  animation : rainy 2s ease-in-out infinite alternate;
+ 	  width : 4em;
+ 	  height : 4em;
+ 	  position : absolute;
+ 	  top:2em;
+ 	  left:2em;
+ 	  background : #BEBEBE;
+ 	  border-radius : 50%;
+ 	  box-shadow :
+ 	    #BEBEBE 2em   -0.8em 0  0.5em,
+ 	    #BEBEBE 4em    0.2em 0 -0.3em,
+ 	    #BEBEBE 2.5em  1em   0 -0.3em,
+ 	    #BEBEBE 0em    1em   0 -0.3em,
+ 	    #BEBEBE -2em   0.5em   0 -0.5em;
+ 	}
+ .Rainy:after{
+ 	  -webkit-animation:rainy-shadow 2s ease-in-out infinite alternate;
+ 	  animation:rainy-shadow 2s ease-in-out infinite alternate;
+ 	  content:"";
+ 	  position : absolute;
+ 	  width : 7.5em;
+ 	  height : 1.5em;
+ 	  background : #000;
+ 	  top : 8em;
+ 	  left : -0.8em;
+ 	  opacity : 0.2;
+ 	  border-radius : 50%;
+ 	  -webkit-transform:scale(0.9);
+ 	  transform:scale(0.9);
+ 	}
+ .Rainy:before{
+ 	  -webkit-animation:rainy-point 0.9s linear infinite;
+ 	  animation:rainy-point 0.9s linear infinite;
+ 	  content:"";
+ 	  position:absolute;
+ 	  width:0.2em;
+ 	  height:0.4em;
+ 	  border-radius:50%;
+ 	  background:#BEBEBE;
+ 	  opacity:0.5;
+ 	  top:2em;
+ 	}
+/*rainy animation*/
+ @keyframes rainy{
+ 	  100%{
+ 	  	  transform:translateY(1em);}
+ 	     }
+ @-webkit-keyframes rainy{
+ 	  100%{
+ 	  	  -webkit-transform:translateY(1em);
+ 	  	  }
+ 	}
+/*rainy-shadow animation*/
+ @keyframes rainy-shadow{
+ 	  100%{
+ 	  	   transform:translateY(-1em) scale(0.5);
+ 	  	   opacity:0.5
+ 	  	  }
+ 	}
+ @-webkit-keyframes rainy-shadow{
+ 	  100%{
+ 	  	  -webkit-transform:translateY(-1em) scale(0.5);
+ 	  	  opacity:0.5;
+ 	  	  }
+ 	}
+/*rainy-point animation*/
+ @-webkit-keyframes rainy-point{
+ 	  0%{
+ 	  	 box-shadow : 
+ 	  	   rgba(0,0,0,0) 0      0,
+ 	  	   rgba(0,0,0,0) 0.7em  0.7em,
+ 	  	   #FFF  1.4em  2.6em,
+ 	  	   #000  2.1em  2em,
+ 	  	   #000  3em  4em,
+ 	  	   #000  3.7em  5em,
+ 	  	   #000  5em  2em,
+ 	  	   #000  5.7em  2.1em;
+ 	  	}
+ 	  	
+ 	  25%{
+ 	  	  box-shadow : 
+ 	  	   #000 0      1.5em,
+ 	  	   #000 0.7em  1.9em,
+ 	  	   #000 1.4em  3.6em,
+ 	  	   #000 2.1em  3em,
+ 	  	   rgba(0,0,0,0) 3em 6em,
+ 	  	   rgba(0,0,0,0) 3.7em 6.5em,
+ 	  	   #000  5em  3.5em,
+ 	  	   #000  5.7em 3.2em;
+ 	  	}
+ 	  26%{
+ 	  	  box-shadow : 
+ 	  	   #000 0      1.5em,
+ 	  	   #000 0.7em  1.9em,
+ 	  	   #000 1.4em  3.6em,
+ 	  	   #000 2.1em  3em,
+ 	  	   rgba(0,0,0,0) 3em 2.5em,
+ 	  	   rgba(0,0,0,0) 3.7em 1em,
+ 	  	   #000  5em  3.5em,
+ 	  	   #000  5.7em 3.2em;
+ 	  	}
+ 	  50%{
+ 	  	 box-shadow : 
+ 	  	   #000 0      3em,
+ 	  	   #000 0.7em  3.1em,
+ 	  	   rgba(0,0,0,0) 1.4em  4.6em,
+ 	  	   #000 2.1em  4em,
+ 	  	   #000 3em 3.5em,
+ 	  	   #000 3.7em 2.8em,
+ 	  	   #000  5em  5em,
+ 	  	   #000  5.7em 4.3em;
+ 	  	}
+ 	  51%{
+ 	  	 box-shadow : 
+ 	  	   #000 0      3em,
+ 	  	   #000 0.7em  3.1em,
+ 	  	   rgba(0,0,0,0) 1.4em  1.6em,
+ 	  	   #000 2.1em  4em,
+ 	  	   #000 3em 3.5em,
+ 	  	   #000 3.7em 2.8em,
+ 	  	   #000  5em  5em,
+ 	  	   #000  5.7em 4.3em;
+ 	  	}
+ 	  75%{
+ 	  	  box-shadow : 
+ 	  	   #000 0      4.5em,
+ 	  	   #000 0.7em  4.3em,
+ 	  	   #000 1.4em  3.6em,
+ 	  	   rgba(0,0,0,0) 2.1em  5em,
+ 	  	   #000 3em 4.5em,
+ 	  	   #000 3.7em 4.6em,
+ 	  	   rgba(0,0,0,0) 5em  6.5em,
+ 	  	   rgba(0,0,0,0) 5.7em 5.4em;
+ 	  	}
+ 	  76%{
+ 	  	  box-shadow : 
+ 	  	   #000 0      4.5em,
+ 	  	   #000 0.7em  4.3em,
+ 	  	   #000 1.4em  3.6em,
+ 	  	   rgba(0,0,0,0) 2.1em  2.5em,
+ 	  	   #000 3em 4.5em,
+ 	  	   #000 3.7em 4.6em,
+ 	  	   rgba(0,0,0,0) 5em  1.5em,
+ 	  	   rgba(0,0,0,0) 5.7em 3em;
+ 	  	}
+ 	  100%{
+ 	  	  box-shadow : 
+ 	  	  rgba(0,0,0,0) 0      6em,
+ 	  	  rgba(0,0,0,0) 0.7em  5.5em,
+ 	  	  #000  1.4em  5.6em,
+ 	  	  #000  2.1em  4em,
+ 	  	  #000 3em 5.5em,
+ 	  	  #000 3.7em 6.4em,
+ 	  	  #000 5em 4.4em,
+ 	  	  #000 5.7em 5em;
+ 	  	}
+ 	}
+ 	
+/*
+ *彩虹
+ */
+ .Rainbow{
+ 	  -webkit-animation: rainbow  2s  linear infinite alternate;
+ 	  animation: rainbow  2s  linear infinite alternate;
+ 	  width : 4em;
+ 	  height : 4em;
+ 	  position:absolute;
+ 	  left : 3em;
+ 	  top : 4em;
+ 	  border-radius : 6em 0 0 0;
+ 	  box-shadow:
+ 	    #FF0000 -0.15em  -0.15em  0 0.1em,
+ 	    #FFCC00 -0.3em   -0.3em   0 0.25em,
+ 	    #FFFF00 -0.45em  -0.45em  0 0.4em,
+ 	    #00FF00 -0.6em   -0.6em   0 0.55em,
+ 	    #00FFFF -0.75em  -0.75em  0 0.7em,
+ 	    #0000FF -0.9em   -0.9em   0 0.85em,
+ 	    #750075 -1.05em  -1.05em  0 1em;
+ 	  -webkit-transform : rotate(40deg);
+ 	  transform : rotate(40deg);
+ 	  transform-origin:50% 50%;
+ 	}
+ .Rainbow:after{
+ 	  -webkit-animation : rainbow-shadow 2s linear infinite alternate;
+ 	  animation: rainbow-shadow 2s linear infinite alternate;
+ 	  content:"";
+ 	  position : absolute;
+ 	  width : 7.5em;
+ 	  height : 1.5em;
+ 	  background : #000;
+ 	  top : 4.5em;
+ 	  left : 1.5em;
+ 	  opacity : 0.2;
+ 	  border-radius : 50%;
+ 	  -webkit-transform:scale(0.9);
+ 	  transform:scale(0.9);
+ 	  -webkit-transform : rotate(-40deg);
+ 	  transform : rotate(-40deg);
+ 	}
+/*rainybow animation*/
+ 
+ @-webkit-keyframes rainbow{
+ 	  100%{
+ 	  	  -webkit-transform:rotate(50deg);
+ 	  	}
+ 	}
+ @keyframes rainbow{
+ 	  100%{
+ 	  	  transform:rotate(50deg);
+ 	  	}
+ 	}
+/*rainybow-shadow animation*/
+ @keyframes rainbow-shadow{
+ 	  100%{
+ 	  	   transform:rotate(-50deg) scale(0.7);
+ 	  	   opacity:0.3
+ 	  	  }
+ 	}
+ @-webkit-keyframes rainbow-shadow{
+ 	  100%{
+ 	  	  -webkit-transform:rotate(-50deg) scale(0.7);
+ 	  	  opacity:0.3;
+ 	  	  }
+ 	}
+/*
+ *闪电
+ */
+ .Stormy{
+ 	  -webkit-animation : stormy 5s ease-in-out infinite;
+ 	  animation : stormy 5s ease-in-out infinite;
+ 	  width : 4em;
+ 	  height : 4em;
+ 	  position : absolute;
+ 	  top:2em;
+ 	  left:2em;
+ 	  background : #000;
+ 	  border-radius : 50%;
+ 	  box-shadow :
+ 	    #000 2em   -0.8em 0  0.5em,
+ 	    #000 4em    0.2em 0 -0.3em,
+ 	    #000 2.5em  1em   0 -0.3em,
+ 	    #000 0em    1em   0 -0.3em,
+ 	    #000 -2em   0.5em   0 -0.5em;
+ 	}
+ .Stormy:after{
+ 	  -webkit-animation: stormy-shadow 5s ease-in-out infinite;
+ 	  animation: stormy-shadow 5s ease-in-out infinite;
+ 	  content:"";
+ 	  position : absolute;
+ 	  width : 7.5em;
+ 	  height : 1.5em;
+ 	  background : #000;
+ 	  top : 8em;
+ 	  left : -0.8em;
+ 	  opacity : 0.2;
+ 	  border-radius : 50%;
+ 	  -webkit-transform:scale(0.9);
+ 	  transform:scale(0.9);
+ 	}
+ .Stormy:before{
+ 	  -webkit-animation: stormy-thunder 2s steps(1,end) infinite;
+ 	  animation: stormy-thunder 2s steps(1,end) infinite;
+ 	  content:"";
+ 	  width:0;
+ 	  height:0;
+ 	  position:absolute;
+ 	  border-left:0 solid transparent;
+ 	  border-right:0.5em solid transparent;
+ 	  border-top: 3em solid yellow;
+ 	  box-shadow : -0.5em -2.5em yellow;
+ 	  top : 5em;
+ 	  left :3em;
+ 	  -webkit-transform : rotate(14deg);
+ 	  transform : rotate(14deg);
+ 	  transform-origin : 50% -3em;
+ 	}
+/*Stormy animation*/
+ @keyframes stormy{
+ 	  50%{transform:translateY(1em);}
+ 	}
+ @-webkit-keyframes stormy{
+ 	  50%{-webkit-transform:translateY(1em);}
+ 	}
+ 	
+/*cloudy-shadow animation*/
+ @keyframes stormy-shadow{
+ 	  50%{
+ 	  	  -webkit-transform:translateY(-1em) scale(0.5);
+ 	  	  opacity:0.5;
+ 	  	 }
+ 	}
+ @-webkit-keyframes stormy-shadow{
+ 	  50%{
+ 	  	  -webkit-transform:translateY(-1em) scale(0.5);
+ 	  	  opacity:0.5;
+ 	  	 }
+ 	}
+/*stormy-thunder animation*/
+ @keyframes stormy-thunder{
+ 	  0%{transform : rotate(20deg);opacity:1;}
+ 	  5%{transform : rotate(-40deg);opacity:1;}
+ 	  10%{transform : rotate(0deg); opacity:1}
+ 	  15%{transform : rotate(-40deg); opacity:0}
+ 	}
+  @-webkit-keyframes stormy-thunder{
+ 	  0%{-webkit-transform : rotate(20deg);opacity:1;}
+ 	  5%{-webkit-transform : rotate(-40deg);opacity:1;}
+ 	  10%{-webkit-transform : rotate(0deg); opacity:1}
+ 	  15%{-webkit-transform : rotate(-40deg); opacity:0}
+ 	}
+
+/*
+ *雪
+ */
+ .Snowy{
+ 	  -webkit-animation : snowy 2s ease-in-out infinite alternate;
+ 	  animation : snowy 2s ease-in-out infinite alternate;
+ 	  width : 4em;
+ 	  height : 4em;
+ 	  position : absolute;
+ 	  top:2em;
+ 	  left:2em;
+ 	  background : #F0F0F0;
+ 	  border-radius : 50%;
+ 	  box-shadow :
+ 	    #F0F0F0 2em   -0.8em 0  0.5em,
+ 	    #F0F0F0 4em    0.2em 0 -0.3em,
+ 	    #F0F0F0 2.5em  1em   0 -0.3em,
+ 	    #F0F0F0 0em    1em   0 -0.3em,
+ 	    #F0F0F0 -2em   0.5em   0 -0.5em;
+ 	}
+ .Snowy:after{
+ 	  -webkit-animation:sonwy-shadow 2s ease-in-out infinite alternate;
+ 	  animation:snowy-shadow 2s ease-in-out infinite alternate;
+ 	  content:"";
+ 	  position : absolute;
+ 	  width : 7.5em;
+ 	  height : 1.5em;
+ 	  background : #000;
+ 	  top : 8em;
+ 	  left : -0.8em;
+ 	  opacity : 0.2;
+ 	  border-radius : 50%;
+ 	  -webkit-transform:scale(0.9);
+ 	  transform:scale(0.9);
+ 	}
+ .Snowy:before{
+ 	  -webkit-animation:snowy-flowers 4s linear infinite;
+ 	  animation:snowy-flowers 4s linear infinite;
+ 	  content:"";
+ 	  position:absolute;
+ 	  width:0.5em;
+ 	  height:0.5em;
+ 	  border-radius:50%;
+ 	  background:#F0F0F0;
+ 	  top:2em;
+ 	}
+/*rainy animation*/
+ @keyframes snowy{
+ 	  100%{
+ 	  	  transform:translateY(1em);}
+ 	     }
+ @-webkit-keyframes snowy{
+ 	  100%{
+ 	  	  -webkit-transform:translateY(1em);
+ 	  	  }
+ 	}
+/*rainy-shadow animation*/
+ @keyframes snowy-shadow{
+ 	  100%{
+ 	  	   transform:translateY(-1em) scale(0.5);
+ 	  	   opacity:0.5
+ 	  	  }
+ 	}
+ @-webkit-keyframes snowy-shadow{
+ 	  100%{
+ 	  	  -webkit-transform:translateY(-1em) scale(0.5);
+ 	  	  opacity:0.5;
+ 	  	  }
+ 	}
+/*rainy-point animation*/
+ @-webkit-keyframes snowy-flowers{
+ 	  0%{
+ 	  	 box-shadow : 
+ 	  	   rgba(255,255,255,0) 0      0,
+ 	  	   rgba(255,255,255,0) 0.7em  0.7em,
+ 	  	   #fff  1.4em  2.6em,
+ 	  	   #fff  2.1em  2em,
+ 	  	   #fff  3em  4em,
+ 	  	   #fff  3.7em  5em,
+ 	  	   #fff  5em  2em,
+ 	  	   #fff  5.7em  2.1em;
+ 	  	}
+ 	  	
+ 	  25%{
+ 	  	  box-shadow : 
+ 	  	   #fff 0      1.5em,
+ 	  	   #fff 0.7em  1.9em,
+ 	  	   #fff 1.4em  3.6em,
+ 	  	   #fff 2.1em  3em,
+ 	  	   rgba(255,255,255,0) 3em 6em,
+ 	  	   rgba(255,255,255,0) 3.7em 6.5em,
+ 	  	   #fff  5em  3.5em,
+ 	  	   #fff  5.7em 3.2em;
+ 	  	}
+ 	  26%{
+ 	  	  box-shadow : 
+ 	  	   #fff 0      1.5em,
+ 	  	   #fff 0.7em  1.9em,
+ 	  	   #fff 1.4em  3.6em,
+ 	  	   #fff 2.1em  3em,
+ 	  	   rgba(255,255,255,0) 3em 2.5em,
+ 	  	   rgba(255,255,255,0) 3.7em 1em,
+ 	  	   #fff  5em  3.5em,
+ 	  	   #fff  5.7em 3.2em;
+ 	  	}
+ 	  50%{
+ 	  	 box-shadow : 
+ 	  	   #fff 0      3em,
+ 	  	   #fff 0.7em  3.1em,
+ 	  	   rgba(255,255,255,0) 1.4em  4.6em,
+ 	  	   #fff 2.1em  4em,
+ 	  	   #fff 3em 3.5em,
+ 	  	   #fff 3.7em 2.8em,
+ 	  	   #fff  5em  5em,
+ 	  	   #fff  5.7em 4.3em;
+ 	  	}
+ 	  51%{
+ 	  	 box-shadow : 
+ 	  	   #fff 0      3em,
+ 	  	   #fff 0.7em  3.1em,
+ 	  	   rgba(255,255,255,0) 1.4em  1.6em,
+ 	  	   #fff 2.1em  4em,
+ 	  	   #fff 3em 3.5em,
+ 	  	   #fff 3.7em 2.8em,
+ 	  	   #fff  5em  5em,
+ 	  	   #fff  5.7em 4.3em;
+ 	  	}
+ 	  75%{
+ 	  	  box-shadow : 
+ 	  	   #fff 0      4.5em,
+ 	  	   #fff 0.7em  4.3em,
+ 	  	   #fff 1.4em  3.6em,
+ 	  	   rgba(255,255,255,0) 2.1em  5em,
+ 	  	   #fff 3em 4.5em,
+ 	  	   #fff 3.7em 4.6em,
+ 	  	   rgba(255,255,255,0) 5em  6.5em,
+ 	  	   rgba(255,255,255,0) 5.7em 5.4em;
+ 	  	}
+ 	  76%{
+ 	  	  box-shadow : 
+ 	  	   #fff 0      4.5em,
+ 	  	   #fff 0.7em  4.3em,
+ 	  	   #fff 1.4em  3.6em,
+ 	  	   rgba(255,255,255,0) 2.1em  2.5em,
+ 	  	   #fff 3em 4.5em,
+ 	  	   #fff 3.7em 4.6em,
+ 	  	   rgba(255,255,255,0) 5em  1.5em,
+ 	  	   rgba(255,255,255,0) 5.7em 3em;
+ 	  	}
+ 	  100%{
+ 	  	  box-shadow : 
+ 	  	  rgba(255,255,255,0) 0      6em,
+ 	  	  rgba(255,255,255,0) 0.7em  5.5em,
+ 	  	  #fff  1.4em  5.6em,
+ 	  	  #fff  2.1em  4em,
+ 	  	  #fff 3em 5.5em,
+ 	  	  #fff 3.7em 6.4em,
+ 	  	  #fff 5em 4.4em,
+ 	  	  #fff 5.7em 5em;
+ 	  	}
+ 	}
+/*
+ *月亮
+ */
+ .Moon{
+ 	  -webkit-animation: moon-star 5s linear infinite;
+ 	  animation: moon-star 5s linear infinite;
+ 	  content:"";
+ 	  width:0.4em;
+ 	  height:0.4em;
+ 	  position:absolute;
+ 	  background:#fff;
+ 	  left:0.5em;
+ 	  top:2.5em;
+ 	  border-radius:50%;
+ 	  box-shadow:
+ 	    rgba(255,255,255,0.4) 2em 6em 0 -0.05em,
+ 	    rgba(255,255,255,0.5) 4em 8em 0 -0.05em,
+ 	    rgba(255,255,255,0.4) 6.3em -1.5em 0  0,
+ 	    rgba(255,255,255,0.5) 4.3em 5.4em 0 -0.05em,
+ 	    rgba(255,255,255,0.3) 2em 6em 0 -0.05em,
+ 	    rgba(255,255,255,0.4) 8.2em -1em 0 -0.1em,
+ 	    rgba(255,255,255,0.3) 8em 6em 0  0,
+ 	    #FFF  2.6em -1.3em 0 -0.1em,
+ 	    #FFF -0.1em  3.7em 0 -0.05em,
+ 	    #FFF  6.6em  5.3em 0 -0.1em,
+ 	    #FFF  5.6em  1.3em 0 -0.05em,
+ 	    #FFF  7.8em  2.5em 0  0em,
+ 	    #FFF  6.6em  8.3em 0 -0.1em,
+ 	    #FFF  2.6em  4.9em 0 -0.1em;
+ 	}
+ .Moon:after{
+ 	   -webkit-animation: moon 5s linear infinite;
+ 	  animation: moon 5s linear infinite;
+ 	  content:'';
+ 	  width : 5em;
+ 	  height : 5em;
+ 	  position:absolute;
+ 	  border-radius : 50%;
+ 	  box-shadow:#FFF -1.5em 0;
+ 	  top:0em;
+ 	  left: 3.5em;
+ 	  -webkit-transform : rotate(10deg);
+ 	  transform : rotate(10deg);
+ 	  
+ 	}
+/*moon animation*/
+ @-webkit-keyframes moon{
+ 	  50%{
+ 	  	  -webkit-transform: rotate(25deg);
+ 	  	} 
+ 	}
+ @keyframes moon{
+ 	  50%{
+ 	  	  transform: rotate(25deg);
+ 	  	}
+ 	}
+/*moon-star animation*/
+ @-webkit-keyframes moon-star{
+ 	  50%{
+ 	  	  box-shadow:
+ 	    #FFF 2em 6em 0 -0.05em,
+ 	    #FFF 4em 8em 0 -0.05em,
+ 	    #FFF 6.3em -1.5em 0  0,
+ 	    #FFF 4.3em 5.4em 0 -0.05em,
+ 	    #FFF 2em 6em 0 -0.05em,
+ 	    #FFF 8.2em -1em 0 -0.1em,
+ 	    #FFF 8em 6em 0  0,
+ 	    rgba(255,255,255,0.1)  2.6em -1.3em 0 -0.1em,
+ 	    rgba(255,255,255,0.1) -0.1em  3.7em 0 -0.05em,
+ 	    rgba(255,255,255,0.2)  6.6em  5.3em 0 -0.1em,
+ 	    rgba(255,255,255,0.1)  5.6em  1.3em 0 -0.05em,
+ 	    rgba(255,255,255,0.1)  7.8em  2.5em 0  0em,
+ 	    rgba(255,255,255,0.2)  6.6em  8.3em 0 -0.1em,
+ 	    rgba(255,255,255,0.1)  2.6em  4.9em 0 -0.1em;
+ 	  	} 
+ 	}
+ @keyframes moon-star{
+ 	  50%{
+ 	  	  box-shadow:
+ 	    #FFF 2em 6em 0 -0.05em,
+ 	    #FFF 4em 8em 0 -0.05em,
+ 	    #FFF 6.3em -1.5em 0  0,
+ 	    #FFF 4.3em 5.4em 0 -0.05em,
+ 	    #FFF 2em 6em 0 -0.05em,
+ 	    #FFF 8.2em -1em 0 -0.1em,
+ 	    #FFF 8em 6em 0  0,
+ 	    rgba(255,255,255,0.1)  2.6em -1.3em 0 -0.1em,
+ 	    rgba(255,255,255,0.1) -0.1em  3.7em 0 -0.05em,
+ 	    rgba(255,255,255,0.2)  6.6em  5.3em 0 -0.1em,
+ 	    rgba(255,255,255,0.1)  5.6em  1.3em 0 -0.05em,
+ 	    rgba(255,255,255,0.1)  7.8em  2.5em 0  0em,
+ 	    rgba(255,255,255,0.2)  6.6em  8.3em 0 -0.1em,
+ 	    rgba(255,255,255,0.1)  2.6em  4.9em 0 -0.1em;
+ 	  	}
+ 	}
+ 	
